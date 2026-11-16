@@ -28,7 +28,7 @@ asdf install shfmt 3.13.1
 
 ```yaml
 - repo: https://github.com/log2/shfmt-common
-  rev: v0.2.0
+  rev: v0.1.0
   hooks:
     - id: shfmt
       args: [-i, "4", -bn, -ci, -fn]
@@ -42,15 +42,3 @@ Native shfmt flags: `-i N` (indent), `-bn` (binary ops on new line), `-ci` (case
 git tag v<x.y.z>
 git push origin master --tags
 ```
-
-## Migration from v0.1.x
-
-v0.1.x used `language: script` with a custom wrapper (`shfmt.sh`) that translated `--indent=4` style args. v0.2.0 uses `language: system` and native shfmt flags:
-
-| v0.1.x arg | v0.2.0 equivalent |
-|-----------|------------------|
-| `--indent=4` | `-i "4"` |
-| `-ci` | `-ci` (unchanged) |
-| `-bn` | `-bn` (unchanged) |
-| `-fn` | `-fn` (unchanged) |
-| `-s` | `-s` (unchanged) |
